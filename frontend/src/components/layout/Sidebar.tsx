@@ -19,25 +19,39 @@ const NAV = [
   { path: "/analytics", label: "Analytics", icon: "📉" },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }: { onClose: () => void }) {
   return (
-    <aside className="w-60 bg-[#111827] border-r border-[#243044] h-screen flex flex-col shrink-0">
-      <div className="p-4 border-b border-[#243044]">
-        <h1 className="text-lg font-bold text-white tracking-wide">NWIS</h1>
-        <p className="text-[11px] text-slate-400">Nearby Wells Intelligence</p>
-        <p className="text-[10px] text-orange-400 mt-1">⚠ SYNTHETIC DEMO</p>
+    <aside className="w-64 h-screen bg-[#14102a] border-r border-[#2d2450] flex flex-col shrink-0">
+      <div className="p-4 border-b border-[#2d2450] flex items-start justify-between">
+        <div>
+          <h1 className="text-lg font-bold text-white tracking-wide">NWIS</h1>
+          <p className="text-[11px] text-slate-400">Nearby Wells Intelligence</p>
+          <p className="text-[10px] text-orange-400 mt-1">⚠ SYNTHETIC DEMO</p>
+        </div>
+        {/* Close button - mobile only */}
+        <button
+          onClick={onClose}
+          className="lg:hidden text-slate-400 hover:text-white p-1"
+          aria-label="Close sidebar"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
       </div>
+
       <nav className="flex-1 overflow-y-auto p-2">
         {NAV.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             end={item.path === "/"}
+            onClick={onClose}
             className={({ isActive }) =>
               `flex items-center gap-2 px-3 py-2 rounded-md text-[13px] mb-0.5 transition-colors ${
                 isActive
-                  ? "bg-blue-600 text-white"
-                  : "text-slate-300 hover:bg-[#1a2332]"
+                  ? "bg-[#7c3aed] text-white"
+                  : "text-slate-300 hover:bg-[#1e1838]"
               }`
             }
           >
@@ -46,7 +60,8 @@ export default function Sidebar() {
           </NavLink>
         ))}
       </nav>
-      <div className="p-3 border-t border-[#243044] text-[10px] text-slate-500">
+
+      <div className="p-3 border-t border-[#2d2450] text-[10px] text-slate-500">
         eRTMAC Companion • Not Operational
       </div>
     </aside>
