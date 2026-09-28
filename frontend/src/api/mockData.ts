@@ -13,11 +13,22 @@ export const ACTIVE_WELL = {
 };
 
 export const OFFSET_WELLS: Well[] = [
+  // Assam Basin (Oil India operational)
   { id: 2, well_id: "OIL-A03", name: "OIL-A03", lat: 27.55, lon: 95.34, formation: "Barail", depth_m: 2850, reservoir: "Tipam Sand", mw: 1.34, incident_count: 5, status: "HISTORICAL" },
   { id: 3, well_id: "OIL-A05", name: "OIL-A05", lat: 27.49, lon: 95.28, formation: "Tipam", depth_m: 2650, reservoir: "Tipam Sand", mw: 1.28, incident_count: 3, status: "HISTORICAL" },
   { id: 4, well_id: "OIL-A07", name: "OIL-A07", lat: 27.58, lon: 95.37, formation: "Barail", depth_m: 2900, reservoir: "Barail Sand", mw: 1.36, incident_count: 6, status: "HISTORICAL" },
   { id: 5, well_id: "OIL-B02", name: "OIL-B02", lat: 27.45, lon: 95.25, formation: "Girujan", depth_m: 2400, reservoir: "Tipam Sand", mw: 1.22, incident_count: 2, status: "HISTORICAL" },
   { id: 6, well_id: "OIL-B04", name: "OIL-B04", lat: 27.62, lon: 95.42, formation: "Namsang", depth_m: 3100, reservoir: "Namsang", mw: 1.40, incident_count: 4, status: "HISTORICAL" },
+  // Rajasthan (Barmer Basin)
+  { id: 7, well_id: "OIL-R01", name: "OIL-R01", lat: 25.75, lon: 71.38, formation: "Fatehgarh", depth_m: 2400, reservoir: "Mangala", mw: 1.18, incident_count: 3, status: "HISTORICAL" },
+  { id: 8, well_id: "OIL-R02", name: "OIL-R02", lat: 25.82, lon: 71.45, formation: "Barmer Hill", depth_m: 1800, reservoir: "Bhagyam", mw: 1.15, incident_count: 2, status: "HISTORICAL" },
+  // Gujarat (Cambay Basin)
+  { id: 9, well_id: "OIL-G01", name: "OIL-G01", lat: 22.30, lon: 72.85, formation: "Kadi", depth_m: 1900, reservoir: "Kalol", mw: 1.20, incident_count: 4, status: "HISTORICAL" },
+  { id: 10, well_id: "OIL-G02", name: "OIL-G02", lat: 22.45, lon: 73.10, formation: "Ankleshwar", depth_m: 2100, reservoir: "Ankleshwar", mw: 1.22, incident_count: 5, status: "HISTORICAL" },
+  // Krishna-Godavari Basin (East Coast)
+  { id: 11, well_id: "OIL-KG01", name: "OIL-KG01", lat: 16.55, lon: 82.20, formation: "Razole", depth_m: 3200, reservoir: "KG Sand", mw: 1.42, incident_count: 3, status: "HISTORICAL" },
+  // Cauvery Basin (South)
+  { id: 12, well_id: "OIL-C01", name: "OIL-C01", lat: 10.85, lon: 79.65, formation: "Nannilam", depth_m: 2500, reservoir: "Cauvery Sand", mw: 1.25, incident_count: 2, status: "HISTORICAL" },
 ];
 
 export const HISTORICAL_EVENTS: DrillingEvent[] = [
@@ -36,6 +47,9 @@ export const SIMILARITIES: Similarity[] = [
   { well_id: "OIL-A05", score: 68, breakdown: { geographic: 0.88, formation: 0.2, depth: 0.85, reservoir: 1.0, mud_weight: 0.96, rop_wob_rpm: 0.70, torque_pressure: 0.72, temperature: 0.85, incidents: 0.6 } },
   { well_id: "OIL-B04", score: 54, breakdown: { geographic: 0.72, formation: 0.2, depth: 0.70, reservoir: 0.3, mud_weight: 0.92, rop_wob_rpm: 0.65, torque_pressure: 0.60, temperature: 0.80, incidents: 0.8 } },
   { well_id: "OIL-B02", score: 42, breakdown: { geographic: 0.65, formation: 0.2, depth: 0.60, reservoir: 1.0, mud_weight: 0.90, rop_wob_rpm: 0.55, torque_pressure: 0.50, temperature: 0.75, incidents: 0.4 } },
+  { well_id: "OIL-R01", score: 38, breakdown: { geographic: 0.10, formation: 0.3, depth: 0.70, reservoir: 0.4, mud_weight: 0.85, rop_wob_rpm: 0.55, torque_pressure: 0.52, temperature: 0.72, incidents: 0.6 } },
+  { well_id: "OIL-G01", score: 32, breakdown: { geographic: 0.12, formation: 0.2, depth: 0.60, reservoir: 0.3, mud_weight: 0.88, rop_wob_rpm: 0.50, torque_pressure: 0.45, temperature: 0.70, incidents: 0.8 } },
+  { well_id: "OIL-KG01", score: 28, breakdown: { geographic: 0.08, formation: 0.2, depth: 0.55, reservoir: 0.3, mud_weight: 0.80, rop_wob_rpm: 0.45, torque_pressure: 0.40, temperature: 0.68, incidents: 0.6 } },
 ];
 
 export const generateLiveSignal = (tick: number, anomaly: boolean): LiveSignal => {

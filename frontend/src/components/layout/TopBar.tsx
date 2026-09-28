@@ -18,13 +18,15 @@ export default function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
   return (
     <header className="h-14 bg-[#14102a] border-b border-[#2d2450] flex items-center justify-between px-3 lg:px-6 shrink-0">
       <div className="flex items-center gap-3 lg:gap-4 min-w-0">
+        {/* Hamburger — always visible */}
         <button
           onClick={onMenuClick}
-          className="lg:hidden p-1 shrink-0"
+          className="p-1.5 rounded-md transition shrink-0 hover:bg-[#2d2450]"
           style={{ color: "var(--text-secondary)" }}
-          aria-label="Open sidebar"
+          aria-label="Toggle sidebar"
+          title="Toggle sidebar"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M3 6h18M3 12h18M3 18h18" />
           </svg>
         </button>
